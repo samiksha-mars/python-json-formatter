@@ -16,8 +16,8 @@ class ParseTest(unittest.TestCase):
     def test_error_location(self):
         with self.assertRaises(JsonError) as ctx:
             parse('{\n  "a": 1,\n}', "data.json")
-        self.assertEqual((ctx.exception.lineno, ctx.exception.colno), (3, 1))
-        self.assertTrue(str(ctx.exception).startswith("data.json:3:1:"))
+        self.assertEqual((ctx.exception.lineno, ctx.exception.colno), (2, 9))
+        self.assertTrue(str(ctx.exception).startswith("data.json:2:9:"))
 
     def test_empty_input_is_invalid(self):
         with self.assertRaises(JsonError):

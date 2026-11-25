@@ -36,7 +36,7 @@ Errors point at the exact location:
 
 ```
 $ python3 json_formatter.py --check broken.json
-error: broken.json:3:1: Illegal trailing comma before end of object
+error: broken.json:2:9: Illegal trailing comma before end of object
 ```
 
 Invalid files are never overwritten by `--in-place`, and processing continues with the next file.
